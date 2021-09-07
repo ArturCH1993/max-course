@@ -1,3 +1,4 @@
+import Card from '../UI/Card';
 import './ExpenseDate.css';
 
 function ExpenseDate(props) {
@@ -6,13 +7,13 @@ function ExpenseDate(props) {
     month = date.toLocaleString('en-US', { month: 'long' }),
     year = date.getFullYear();
   return (
-    <div>
-      <div className='expense-date'>
-        <div className='expense-date__month'>{month}</div>
-        <div className='expense-date__year'>{year}</div>
-        <div className='expense-date__day'>{day}</div>
+    <Card>
+      <div className="expense-date">
+        <div className="expense-date__month">{month}</div>
+        <div className="expense-date__year">{year}</div>
+        <div className="expense-date__day">{day}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 
