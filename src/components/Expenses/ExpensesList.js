@@ -9,7 +9,7 @@ function ExpensesList(props) {
     return expensesContet;
   }
   return (
-    <ul className='expenses-list'>
+    <ul className="expenses-list">
       {
         (expensesContet = filteredExpenses.map((expense) => (
           <ExpenseItem

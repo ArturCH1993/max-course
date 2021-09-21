@@ -33,7 +33,7 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className="App">
       <NewExpense expensesHandler={expensesHandler} />
       <Expenses expenses={expenses} />
     </div>

@@ -1,3 +1,7 @@
+p {
+  font-weight: bold;
+  text-align: center;
+}
 .expenses {
   padding: 1rem;
   background-color: rgb(31, 31, 31);
