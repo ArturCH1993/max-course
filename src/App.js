@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpens/NewExpense';
 
-function App(props) {
-  const [expenses, setExpenses] = useState([
+function App() {
+  const DUMMY_DATA = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -23,24 +23,18 @@ function App(props) {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
-  ]);
+  ];
+  const [expenses, setExpenses] = useState(DUMMY_DATA);
 
-  function ExpensesHandler() {
+  function expensesHandler(newExpenseData) {
     setExpenses((prevState) => {
-      console.log(props);
-      return {
-        ...prevState,
-        title: props.title,
-        amount: props.amount,
-        date: props.date,
-      };
+      return [newExpenseData, ...prevState];
     });
   }
 
   return (
-    <div className="App">
-      <NewExpense />
-
+    <div className='App'>
+      <NewExpense expensesHandler={expensesHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
